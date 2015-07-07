@@ -1,0 +1,25 @@
+<div class="row ideas_index">
+  <div class="col-md-5 col-md-offset-1">
+    <h2>Ideas</h2>
+      <div>
+        <% @ideas.each do |idea| %>
+        <ul class = "ideas border">
+          Title:<li><%= idea.title %></li>
+          Body:<li class="idea_body"><%= idea.body %></li>
+          Quality:<li><%= idea.quality %></li>
+          <br>
+        </ul>
+        <% end %>
+      </div>
+  </div>
+
+  <div class="col-md-2 col-md-offset-4 form">
+    <%= link_to new_idea_path, remote: true do %>
+      <button class="btn btn-default">New Idea</button>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-2" id="task-form" style="display:none;"></div>
+</div>
