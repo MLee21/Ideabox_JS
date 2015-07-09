@@ -18,12 +18,20 @@ class IdeasController < ApplicationController
     if @idea.save
       respond_to do |format|
         format.html {redirect_to ideas_path}
+        format.json {render json: {idea: @idea}, status: 201}
       end
     else
       respond_to do |format|
         format.html {render :new}
+        format.json {render json: {errors: @idea.errors}, status: 422}
       end
     end
+  end
+
+  def destroy
+    @idea = Idea.find(params[:id])
+    @idea.destroy
+    head 204
   end
 
   private

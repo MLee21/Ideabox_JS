@@ -1,25 +1,19 @@
-<div class="row ideas_index">
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">IdeaBox</a></h1>
+    </li>
+  </ul>
+</nav>
+
+<div class="row">
   <div class="col-md-5 col-md-offset-1">
     <h2>Ideas</h2>
-      <div>
+      <div class="ideas_index">
         <% @ideas.each do |idea| %>
-        <ul class = "ideas border">
-          Title:<li><%= idea.title %></li>
-          Body:<li class="idea_body"><%= idea.body %></li>
-          Quality:<li><%= idea.quality %></li>
-          <br>
-        </ul>
+            <%= render partial: 'idea', locals: { idea: idea } %>  
         <% end %>
       </div>
   </div>
 
-  <div class="col-md-2 col-md-offset-4 form">
-    <%= link_to new_idea_path, remote: true do %>
-      <button class="btn btn-default">New Idea</button>
-    <% end %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-2" id="task-form" style="display:none;"></div>
-</div>
+  <%= render partial: 'form' %>

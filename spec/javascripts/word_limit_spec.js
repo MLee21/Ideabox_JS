@@ -1,7 +1,3 @@
-var assert = chai.assert,
-  expect = chai.expect,
-  should = chai.should();
-
 var text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 
 describe("Testing", function() {
@@ -13,6 +9,6 @@ describe("Testing", function() {
 describe(truncateText, function(){
   it("should limit body text to 100 characters maximum", function(){
     expect(".idea_body").to.exist;
-    expect(truncateText(text).length();).to.equal(100);
+    expect(truncateText(text).length()).to.equal(100);
   });
 });
